@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Fact Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Fact Generator</h1>
+        <p id="fact"></p>
+        <button id="generate-button">Generate Random Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Google was founded in 1998 by Larry Page and Sergey Brin.",
+            "Google's parent company is Alphabet Inc., which was created in 2015.",
+            "Google Search is the most widely used search engine in the world.",
+            "Google's mission is to organize the world's information and make it universally accessible and useful.",
+            "Google offers a suite of productivity tools known as Google Workspace, which includes Gmail, Docs, Sheets, and Drive.",
+            "Google Chrome is the most popular web browser, with over 65% market share.",
+            "Google Ads is one of the largest online advertising platforms, generating significant revenue for the company.",
+            "Google Play Store is the largest app store for Android devices, hosting millions of apps.",
+            "Google Cloud Platform provides a range of cloud computing services, including data storage, machine learning, and analytics.",
+            "Google's Android operating system is the most widely used mobile OS in the world."
+        ];
+
+        document.getElementById('generate-button').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').innerText = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
